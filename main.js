@@ -81,6 +81,7 @@ anonymousGreet(); // returns an object
 
 */
 
+/*
 function log(a) {
   a();
 }
@@ -88,3 +89,39 @@ function log(a) {
 log(function test(){
   console.log("Hello func");
 });
+
+*/
+
+// By value (Primitives)
+
+var a = 2;
+var b;
+b = a;
+
+console.log("b ", b);
+console.log("a ", a);
+a = 3;
+
+console.log("a ", a);
+console.log("b ", b); 
+
+
+
+// By reference (Objects)
+
+var c = { greeting: "hi" };
+var d;
+
+d = c;
+
+console.log(d);
+
+d.greeting = "hello";
+console.log(c);
+
+var func = function(Obj){
+  Obj.greeting = "hola";
+}
+
+func(c);
+
