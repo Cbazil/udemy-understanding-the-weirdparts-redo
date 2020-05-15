@@ -192,3 +192,20 @@ details("Joe");
 details("Joe", "Mama");
 details("Joe", "Mama", 17);
 */
+
+function greet(firstname, surname, language){
+  language = language || "en";
+  if(language === "en"){
+    console.log("Hello " + firstname);
+  } else if(language === "es"){
+    console.log("Hola "+ firstname);
+  }
+}
+function greetEn(firstname, surname){
+  greet("John", "Doe", "en");
+}
+function greetEs(firstname, surname){
+  greet("Joe", "Mama");
+}
+greetEn();
+greetEs();
