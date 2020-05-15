@@ -142,6 +142,7 @@ function a(){
 }
 a();
 */
+/*
 var a = {
 
   name: "Joe",
@@ -157,3 +158,20 @@ var a = {
 }
 a.log();
 console.log(this.name);
+*/
+
+// Arrays
+
+var arr = [1,
+false ,
+{
+  name: "Joe",
+  address: "1st Street"
+},
+function(name){
+  console.log("Hello " + name);
+ },
+ "The String"
+];
+
+arr[3](arr[2].name);
