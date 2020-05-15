@@ -93,7 +93,7 @@ log(function test(){
 */
 
 // By value (Primitives)
-
+/*
 var a = 2;
 var b;
 b = a;
@@ -105,9 +105,10 @@ a = 3;
 console.log("a ", a);
 console.log("b ", b); 
 
-
+*/
 
 // By reference (Objects)
+/* 
 
 var c = { greeting: "hi" };
 var d;
@@ -124,4 +125,35 @@ var func = function(Obj){
 }
 
 func(c);
+*/
 
+// this always goes back to global environment
+/*
+function a(){
+  // console.log(this);
+  var b = function(){
+    // console.log(this);
+    function c(){
+      console.log(this);
+    }
+    c();
+  }
+  b();
+}
+a();
+*/
+var a = {
+
+  name: "Joe",
+  log: function() {
+    var self = this;
+    self.name = "Joe2";
+    console.log(this);
+    var b = function(){
+      self.name = "Joe3"
+    }
+    b();
+  },
+}
+a.log();
+console.log(this.name);
