@@ -161,7 +161,7 @@ console.log(this.name);
 */
 
 // Arrays
-
+/*
 var arr = [1,
 false ,
 {
@@ -175,3 +175,20 @@ function(name){
 ];
 
 arr[3](arr[2].name);
+*/
+/*
+var details = function(firstname, surname, ...other){
+  if(arguments.length === 0){
+    console.log("There are no parameters!");
+  }
+  console.log(firstname);
+  console.log(surname);
+  console.log(arguments);
+  console.log("------------");
+}
+
+details();
+details("Joe");
+details("Joe", "Mama");
+details("Joe", "Mama", 17);
+*/
