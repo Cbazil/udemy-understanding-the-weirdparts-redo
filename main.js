@@ -193,6 +193,7 @@ details("Joe", "Mama");
 details("Joe", "Mama", 17);
 */
 
+/*
 function greet(firstname, surname, language){
   language = language || "en";
   if(language === "en"){
@@ -209,3 +210,15 @@ function greetEs(firstname, surname){
 }
 greetEn();
 greetEs();
+*/
+
+// syntax parsers semi colon automatic 
+/*
+function getPerson(){
+  return {
+    firstname: "Chad"
+  }
+}
+
+console.log(getPerson());
+*/
