@@ -222,3 +222,49 @@ function getPerson(){
 
 console.log(getPerson());
 */
+
+// function statement
+
+function greet(name){
+  console.log('Hello ' + name);
+}
+greet('John');
+
+// function expression
+
+var greetFunc = function (name){
+  console.log('Hello ' + name)
+}
+
+greetFunc('John');
+
+// Immediately invoked function expression (IIFE)
+var greeting = function (name){
+  return "Hello " + name;
+}('John');
+
+console.log(greeting);
+
+// Immediately invoked
+
+3;
+
+"I'm a string";
+
+{
+  name: "John"
+};
+
+// no errors
+
+// anonymous function (Immediately invoked)
+
+console.log((function (name){
+  return "Hello " + name;
+})('John')); // adds a new execution context on the stack
+
+// If theres a variable with the same name on global environment and we want to change it inside our new execution context
+(function(global, name){
+  global.name = name;
+  return "Hello " + name;
+})(window, 'John');
