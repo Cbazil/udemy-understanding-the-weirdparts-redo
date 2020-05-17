@@ -224,7 +224,7 @@ console.log(getPerson());
 */
 
 // function statement
-
+/*
 function greet(name){
   console.log('Hello ' + name);
 }
@@ -268,3 +268,16 @@ console.log((function (name){
   global.name = name;
   return "Hello " + name;
 })(window, 'John');
+*/
+
+
+// Closure 1 (Primitives anf functions always remain in memory (hanging))
+
+function greet(whattosay){
+  return function(name){
+    console.log(whattosay + " " + name);
+  }
+}
+
+var sayHi = greet("Hi");
+sayHi("Chernell");
