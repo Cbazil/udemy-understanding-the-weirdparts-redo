@@ -272,7 +272,7 @@ console.log((function (name){
 
 
 // Closure 1 (Primitives anf functions always remain in memory (hanging))
-
+/*
 function greet(whattosay){
   return function(name){
     console.log(whattosay + " " + name);
@@ -280,4 +280,64 @@ function greet(whattosay){
 }
 
 var sayHi = greet("Hi");
-sayHi("Chernell");
+sayHi("Chernell"); 
+*/
+
+// Closure 2
+
+// Closure example
+function buildFunctions(){
+  let arr = [];
+  for(i = 0; i < 3; i++){
+    arr.push(function (){
+      console.log(i)
+    })
+  } 
+  return arr;
+}
+
+var fs = buildFunctions();
+
+fs[0]();
+fs[1]();
+fs[2]();
+
+// ES6 Example (works correctly)
+function buildFunctions2(){
+  let arr = [];
+  for (i = 0; i < 3; i++){
+    let j = i;
+    arr.push(function(){
+      console.log(j);
+    })
+  }
+  return arr;
+}
+
+var fs2 = buildFunctions2();
+
+fs2[0]();
+fs2[1]();
+fs2[2]();
+
+// How to make closure part work like ES6
+
+function buildFunctions3(){
+  let arr = [];
+  for(i = 0; i < 3; i++){
+    arr.push(
+        (function(j){
+          return function(){
+            console.log(j);
+          }
+        })(i)
+      );
+  }
+  return arr;
+}
+
+var fs3 = buildFunctions3();
+
+fs3[0]();
+fs3[1]();
+fs3[2]();
