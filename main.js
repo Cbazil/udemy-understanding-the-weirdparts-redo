@@ -345,7 +345,7 @@ fs3[2]();
 */
 
 // Function factory able to work different functions (Closure helpful)
-
+/*
 function makeGreeting(language){
   return function (firstname, surname){
     if(language === "en"){
@@ -361,3 +361,27 @@ var greetSpanish = makeGreeting("es");
 
 greetEnglish("John", "Doe");
 greetSpanish("John", "Doe");
+*/
+
+function sayHiLater(){
+  var greeting = "Hi!";
+  setTimeout(function() {
+    console.log(greeting);
+  }, 3000); // Closure, ran then stored greeting for 3 second. We use closures in first class functions all the time
+}
+
+sayHiLater();
+
+// Call Back function
+
+function tellMeWhenDone(callback){
+  var a = 1000;
+  var b = 2000;
+  
+  callback();
+}
+
+tellMeWhenDone(function(){
+  console.log("hello");
+});
+
