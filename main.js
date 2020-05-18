@@ -284,7 +284,7 @@ sayHi("Chernell");
 */
 
 // Closure 2
-
+/*
 // Closure example
 function buildFunctions(){
   let arr = [];
@@ -341,3 +341,23 @@ var fs3 = buildFunctions3();
 fs3[0]();
 fs3[1]();
 fs3[2]();
+
+*/
+
+// Function factory able to work different functions (Closure helpful)
+
+function makeGreeting(language){
+  return function (firstname, surname){
+    if(language === "en"){
+      console.log("Hello " + firstname + " " + surname);
+    } else if (language === "es"){
+      console.log("Hola " + firstname + " " + surname);
+    }
+  }
+}
+
+var greetEnglish = makeGreeting("en");
+var greetSpanish = makeGreeting("es");
+
+greetEnglish("John", "Doe");
+greetSpanish("John", "Doe");
