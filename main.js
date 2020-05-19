@@ -411,6 +411,26 @@ logPersonName("en", "es");
 
 // call()
 
-logName.call(person,"en", "es");
+logName.call(person,"en", "es"); // list
+logName.apply(person, ["en", "es"]); // array
 
 // bind makes an copy while call executes function
+
+
+// Function borrowing
+
+var person2 = {
+  firstname: "Jane",
+  surname: "Doe"
+}
+
+console.log(person.getFullName.apply(person2)); // Since person has tgis getFullName function and it uses the this indicator , person2 is then used with apply
+
+// function currying: creating a copy of a function but with preset parameters
+
+function multiply(a, b){
+  return a * b;
+}
+
+var multiplyByTwo = multiply.bind(this, 2);
+console.log(multiplyByTwo(4));
