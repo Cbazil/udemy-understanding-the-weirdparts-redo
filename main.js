@@ -387,7 +387,7 @@ tellMeWhenDone(function(){
 */
 
 // bind()
-
+/*
 var person = {
   firstname: "John",
   surname: "Doe",
@@ -437,3 +437,55 @@ console.log(multiplyByTwo(4));
 
 var multiplyByThree = multiply.bind(this, 3);
 console.log(multiplyByThree(6));
+
+*/
+
+// functional programming
+/* Simple looping
+var arr = [1, 2, 3];
+
+var arr2 = [];
+
+for (i = 0; i < arr.length; i++){
+  arr2.push(arr[i] * 2);
+}
+
+console.log(arr2);
+
+*/
+var mapForEach = function(arr, fn){
+  let newArr = []
+  for (i = 0; i < arr.length; i++) {
+    newArr.push(fn(arr[i]));
+  }
+  return newArr;
+}
+
+var arr = [1, 2, 3];
+
+var arr2 = mapForEach(arr, function(item){
+  return item * 4;
+})
+
+console.log(arr2);
+
+var arr3 = mapForEach(arr, function(item){
+  return item > 2;
+})
+console.log(arr3);
+
+var checkPastLimit = function (limit, item) {
+  return item > limit;
+}
+var arr4 = mapForEach(arr, checkPastLimit.bind(this, 1));
+
+console.log(arr4);
+var checkPastLimitSimplifer = function(limit){
+     return function(limit, item) {
+       return item > limit;
+  }.bind(this, limit);
+}
+
+var arr5 = mapForEach(arr, checkPastLimitSimplifer(1));
+
+console.log(arr5);
