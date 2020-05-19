@@ -362,7 +362,7 @@ var greetSpanish = makeGreeting("es");
 greetEnglish("John", "Doe");
 greetSpanish("John", "Doe");
 */
-
+/*
 function sayHiLater(){
   var greeting = "Hi!";
   setTimeout(function() {
@@ -384,4 +384,33 @@ function tellMeWhenDone(callback){
 tellMeWhenDone(function(){
   console.log("hello");
 });
+*/
 
+// bind()
+
+var person = {
+  firstname: "John",
+  surname: "Doe",
+  getFullName: function (){
+    var fullName = this.firstname + " " + this.surname;
+    return fullName;
+  }
+}
+
+var logName = function(lang1, lang2) {
+  
+  console.log("Logged Name: " + this.getFullName());
+  console.log("Arguments: " + lang1 + " " + lang2);
+  
+}
+
+var logPersonName = logName.bind(person);
+
+logPersonName("en", "es");
+
+
+// call()
+
+logName.call(person,"en", "es");
+
+// bind makes an copy while call executes function
