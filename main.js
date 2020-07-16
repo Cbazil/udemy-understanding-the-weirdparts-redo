@@ -371,7 +371,8 @@ function sayHiLater(){
 }
 
 sayHiLater();
-
+*/
+/*
 // Call Back function
 
 function tellMeWhenDone(callback){
@@ -453,6 +454,7 @@ for (i = 0; i < arr.length; i++){
 console.log(arr2);
 
 */
+/*
 var mapForEach = function(arr, fn){
   let newArr = []
   for (i = 0; i < arr.length; i++) {
@@ -489,3 +491,4 @@ var checkPastLimitSimplifer = function(limit){
 var arr5 = mapForEach(arr, checkPastLimitSimplifer(1));
 
 console.log(arr5);
+*/
