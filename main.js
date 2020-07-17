@@ -492,3 +492,6 @@ var arr5 = mapForEach(arr, checkPastLimitSimplifer(1));
 
 console.log(arr5);
 */
+
+var g = G$("Chad", "Bosch");
+console.log(g);
