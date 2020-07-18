@@ -494,4 +494,4 @@ console.log(arr5);
 */
 
 var g = G$("Chad", "Bosch");
-console.log(g);
+g.greet().setLang("es").greet(true);
