@@ -495,3 +495,10 @@ console.log(arr5);
 
 var g = G$("Chad", "Bosch");
 g.greet().setLang("es").greet(true);
+
+$("#login").click(function(){
+  let loginGrtr = G$("Chad", "Bosch");
+  
+//  $("#loginDiv").hide();
+  loginGrtr.setLang($("#lang").val()).HTMLGreeting("#greeting", function(){return $("#speech").val()}).log();
+})

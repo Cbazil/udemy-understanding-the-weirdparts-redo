@@ -2,18 +2,21 @@
   var Greetr = function(firstname, surname, language){
     return new Greetr.init(firstname, surname, language);
   }
+  // informal greetings
   var greetings = {
     en: "Hello",
     es: "Hola"
   };
-  
+  // formal greetings
   var formalGreetings = {
     en: "Greetings",
     es: "Saludos"
   };
-  
+ 
+ // supported languages 
   var supportedLangs = ["en", "es"];
   
+ // logged messages
   var logMessages = {
     en: "Logged in",
     es: "Inició sesión"
@@ -45,7 +48,7 @@
       if (console){
         console.log(msg);
       }
-      // "this" refera to the calling object at hand
+      // "this" refers to the calling object at hand
       // make the method chainable
       return this;
     },
@@ -70,7 +73,7 @@
         throw "Missing jQuery selector"
       }
       let msg;
-      if (formal){
+      if (formal) {
         msg = this.formalGreeting();
       } else {
         msg = this.greeting();
@@ -85,6 +88,8 @@
     self.firstname = firstname || "";
     self.surname = surname || "";
     self.language = language || "en";
+    
+    self.validate();
   }
   Greetr.init.prototype = Greetr.prototype;
   global.Greetr = global.G$ = Greetr;
