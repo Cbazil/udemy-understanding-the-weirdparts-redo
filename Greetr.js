@@ -73,9 +73,11 @@
         throw "Missing jQuery selector"
       }
       let msg;
-      if (formal) {
+      if (formal == "true") {
+        console.log("Formal");
         msg = this.formalGreeting();
-      } else {
+      } else if (formal == "false") {
+        console.log("Informal");
         msg = this.greeting();
       }
       $(selector).html(msg);

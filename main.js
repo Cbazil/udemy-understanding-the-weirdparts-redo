@@ -500,5 +500,5 @@ $("#login").click(function(){
   let loginGrtr = G$("Chad", "Bosch");
   
 //  $("#loginDiv").hide();
-  loginGrtr.setLang($("#lang").val()).HTMLGreeting("#greeting", function(){return $("#speech").val()}).log();
+  loginGrtr.setLang($("#lang").val()).HTMLGreeting("#greeting", (function(){return $("#speech").val()})()).log();
 })
